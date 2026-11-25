@@ -412,6 +412,11 @@ a {
   margin-top: 1.25rem;
 }
 
+#signupDialog button {
+  color: #fff;
+  font: 500 1rem var(--font);
+}
+
 /* MOBILE ------------------------------------------------------------------- */
 @media (max-width: 640px) {
   .page {
