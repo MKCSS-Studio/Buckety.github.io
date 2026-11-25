@@ -47,6 +47,10 @@ form.addEventListener("submit", async (event) => {
       setStatus("You’re on the waitlist. We couldn’t confirm the email. Try again later.", "error");
       return;
     }
+    if (result.status === "requires_help") {
+      setStatus("We couldn’t issue a new invite. Contact mkcss.studio@gmail.com for help.", "error");
+      return;
+    }
     if (result.status === "full") {
       setStatus("Today’s signup limit has been reached. Please try again later.", "error");
       return;
