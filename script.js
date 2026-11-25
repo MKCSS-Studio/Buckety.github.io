@@ -11,16 +11,44 @@ dialog.addEventListener("click", (e) => {
 const form = document.getElementById("signup");
 const email = document.getElementById("email");
 const status = document.getElementById("status");
+const button = form.querySelector('button[type="submit"]');
 
-form.addEventListener("submit", (event) => {
+function setStatus(message, type = "") {
+  status.textContent = message;
+  status.className = type ? `status ${type}` : "status";
+}
+
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  if (button.disabled) return;
 
   const address = email.value.trim();
   if (address.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
-    status.textContent = "Enter a valid email address.";
+    setStatus("Enter a valid email address.", "error");
     email.focus();
-  } else {
-    status.textContent = "Email requests are currently unavailable. You can join using the TestFlight link above.";
+    return;
   }
-  status.className = "status error";
+
+  const submission = new FormData(form);
+  submission.set("email", address);
+  button.disabled = true;
+  setStatus("Sending your request…");
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: submission,
+      headers: { Accept: "application/json" },
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!response.ok || (await response.json())?.success !== true) {
+      throw new Error("Static Forms did not accept the request.");
+    }
+    form.reset();
+    setStatus("Request received.", "ok");
+  } catch {
+    setStatus("We couldn’t confirm your request. Please try again.", "error");
+  } finally {
+    button.disabled = false;
+  }
 });

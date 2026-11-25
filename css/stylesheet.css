@@ -399,8 +399,8 @@ dialog {
   .info-btn {
     border-radius: 999px;
   }
-  .get-token-btn {
-    padding: 0.8rem 1rem;
+  .signup {
+    width: min(90%, 24rem);
   }
   footer {
     font-size: 0.65rem;

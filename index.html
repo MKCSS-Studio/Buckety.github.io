@@ -64,20 +64,28 @@
         for MacOS beta testing!
       </h1>
 
-      <form class="signup" id="signup" method="post" novalidate>
+      <form
+        class="signup"
+        id="signup"
+        action="https://api.staticforms.dev/submit"
+        method="post"
+      >
+        <input type="hidden" name="apiKey" value="sf_14b4cf5642405d8f3a039092" />
+        <input type="hidden" name="subject" value="MKCSS submission" />
+        <input type="text" name="honeypot" autocomplete="off" tabindex="-1" hidden />
         <input
           class="email"
           id="email"
           name="email"
           type="email"
-          placeholder="mkcss.studio@gmail.com"
+          placeholder="Your email address"
           autocomplete="email"
           aria-label="Email address"
           maxlength="254"
           required
         />
         <button class="glass-btn glass-btn--pink" type="submit">
-          Get Token
+          Request Token
         </button>
       </form>
       <p class="status" id="status" role="status" aria-live="polite"></p>
