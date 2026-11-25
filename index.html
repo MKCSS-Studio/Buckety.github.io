@@ -64,7 +64,7 @@
         for MacOS beta testing!
       </h1>
 
-      <form class="signup" id="signup" novalidate>
+      <form class="signup" id="signup" method="post" novalidate>
         <input
           class="email"
           id="email"
@@ -72,6 +72,8 @@
           type="email"
           placeholder="mkcss.studio@gmail.com"
           autocomplete="email"
+          aria-label="Email address"
+          maxlength="254"
           required
         />
         <button class="glass-btn glass-btn--pink" type="submit">

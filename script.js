@@ -11,40 +11,16 @@ dialog.addEventListener("click", (e) => {
 const form = document.getElementById("signup");
 const email = document.getElementById("email");
 const status = document.getElementById("status");
-const button = form.querySelector(".get-token-btn");
 
-// status msg under signup
-function setStatus(msg, type = "") {
-  status.textContent = msg;
-  status.className = "status " + type;
-}
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-// get token btn event
-form.addEventListener("submit", async (e) => {
-  // stop page reload
-  e.preventDefault();
-  // check email
-  const value = email.value.trim();
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-    setStatus("Enter a valid email address.", "error");
+  const address = email.value.trim();
+  if (address.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
+    status.textContent = "Enter a valid email address.";
     email.focus();
-    return;
+  } else {
+    status.textContent = "Email requests are currently unavailable. You can join using the TestFlight link above.";
   }
-  // preparing to save
-  button.disabled = true;
-  setStatus("Saving…");
-
-  try {
-    // connect to backend >_>
-    await new Promise((r) => setTimeout(r, 600)); // fake delay
-
-    //success
-    setStatus("Check your inbox for your TestFlight token.", "ok");
-    form.reset();
-  } catch (err) {
-    // error
-    setStatus("Something went wrong. Try again in a moment.", "error");
-  } finally {
-    button.disabled = false;
-  }
+  status.className = "status error";
 });
