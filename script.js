@@ -12,6 +12,7 @@ const form = document.getElementById("signup");
 const email = document.getElementById("email");
 const status = document.getElementById("status");
 const button = form.querySelector('button[type="submit"]');
+const signupDialog = document.getElementById("signupDialog");
 
 function setStatus(message, type = "") {
   status.textContent = message;
@@ -44,11 +45,14 @@ form.addEventListener("submit", async (event) => {
     if (!response.ok || (await response.json())?.success !== true) {
       throw new Error("Static Forms did not accept the request.");
     }
-    form.reset();
-    setStatus("Request received.", "ok");
   } catch {
     setStatus("We couldn’t confirm your request. Please try again.", "error");
+    return;
   } finally {
     button.disabled = false;
   }
+
+  form.reset();
+  setStatus("Request received.", "ok");
+  signupDialog.showModal();
 });
