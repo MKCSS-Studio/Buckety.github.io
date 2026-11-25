@@ -11,40 +11,57 @@ dialog.addEventListener("click", (e) => {
 const form = document.getElementById("signup");
 const email = document.getElementById("email");
 const status = document.getElementById("status");
-const button = form.querySelector(".get-token-btn");
+const button = form.querySelector('button[type="submit"]');
+const signupDialog = document.getElementById("signupDialog");
 
-// status msg under signup
-function setStatus(msg, type = "") {
-  status.textContent = msg;
-  status.className = "status " + type;
+function setStatus(message, type = "") {
+  status.textContent = message;
+  status.className = type ? `status ${type}` : "status";
 }
 
-// get token btn event
-form.addEventListener("submit", async (e) => {
-  // stop page reload
-  e.preventDefault();
-  // check email
-  const value = email.value.trim();
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (button.disabled) return;
+
+  const address = email.value.trim();
+  if (address.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
     setStatus("Enter a valid email address.", "error");
     email.focus();
     return;
   }
-  // preparing to save
+
+  const submission = new URLSearchParams(new FormData(form));
+  submission.set("email", address);
   button.disabled = true;
-  setStatus("Saving…");
+  setStatus("Sending your request…");
 
   try {
-    // connect to backend >_>
-    await new Promise((r) => setTimeout(r, 600)); // fake delay
-
-    //success
-    setStatus("Check your inbox for your TestFlight token.", "ok");
-    form.reset();
-  } catch (err) {
-    // error
-    setStatus("Something went wrong. Try again in a moment.", "error");
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: submission,
+      headers: { Accept: "application/json" },
+      signal: AbortSignal.timeout(30000),
+    });
+    const result = await response.json();
+    if (result.status === "pending") {
+      setStatus("You’re on the waitlist. We couldn’t confirm the email. Try again later.", "error");
+      return;
+    }
+    if (result.status === "full") {
+      setStatus("Today’s signup limit has been reached. Please try again later.", "error");
+      return;
+    }
+    if (!response.ok || result.status !== "sent") {
+      throw new Error("Buckety could not confirm the request.");
+    }
+  } catch {
+    setStatus("We couldn’t confirm your request. Please try again.", "error");
+    return;
   } finally {
     button.disabled = false;
   }
+
+  form.reset();
+  setStatus("Request received.", "ok");
+  signupDialog.showModal();
 });
