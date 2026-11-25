@@ -30,7 +30,7 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
-  const submission = new FormData(form);
+  const submission = new URLSearchParams(new FormData(form));
   submission.set("email", address);
   button.disabled = true;
   setStatus("Sending your request…");
@@ -40,10 +40,19 @@ form.addEventListener("submit", async (event) => {
       method: "POST",
       body: submission,
       headers: { Accept: "application/json" },
-      signal: AbortSignal.timeout(15000),
+      signal: AbortSignal.timeout(30000),
     });
-    if (!response.ok || (await response.json())?.success !== true) {
-      throw new Error("Static Forms did not accept the request.");
+    const result = await response.json();
+    if (result.status === "pending") {
+      setStatus("You’re on the waitlist. We couldn’t confirm the email. Try again later.", "error");
+      return;
+    }
+    if (result.status === "full") {
+      setStatus("Today’s signup limit has been reached. Please try again later.", "error");
+      return;
+    }
+    if (!response.ok || result.status !== "sent") {
+      throw new Error("Buckety could not confirm the request.");
     }
   } catch {
     setStatus("We couldn’t confirm your request. Please try again.", "error");
