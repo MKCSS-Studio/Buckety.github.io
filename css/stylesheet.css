@@ -1,0 +1,424 @@
+:root {
+  /* Apple devices get SF Pro via -apple-system / BlinkMacSystemFont.
+     Otherwise defaults to Montserrat. */
+  --font:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Montserrat", "Helvetica Neue", Arial, sans-serif;
+
+  --bg: #1e1e1e;
+  --text: #f5f5f5;
+  --secondary-text: #bfbfbf;
+  --muted: #cfcfcf;
+  --yellow: #f2b705;
+  --pink: #b84a82;
+  --blue: #007cff;
+  --red: #ff383c;
+  --green: #3abc2d;
+}
+
+/* reset everything */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0%;
+  overflow: hidden;
+}
+
+header {
+  position: sticky;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 5vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+
+  z-index: 5;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+footer {
+  position: sticky;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: flex-start;
+
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.5;
+
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* TEXT STYLING */
+h1 {
+  margin: 0;
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 6.2vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+h1 em {
+  font-weight: 300;
+  font-style: italic;
+}
+h1 a {
+  font-weight: 500;
+}
+
+dialog h2 {
+  margin: 0;
+  font-size: clamp(1.1rem, 3.4vw, 1.35rem);
+  font-weight: 500;
+  text-align: justify;
+}
+
+p {
+  margin: 0;
+}
+dialog p {
+  font-size: clamp(0.7rem, 1.9vw, 0.95rem);
+  color: var(--muted);
+  text-align: justify;
+}
+footer p {
+  font-size: 0.6em;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.12em;
+}
+
+/* HEADER ITEMS -------------------------------------------------------------------- */
+
+.app-icon {
+  width: auto;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+#infoBtn {
+  anchor-name: --dialogue-btn;
+}
+
+/* MAIN ITEMS ----------------------------------------------------------------------*/
+/* Hero Text ---------- */
+.hero {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 3%;
+  padding-top: clamp(1rem, 6vh, 5rem);
+}
+
+.stage-text {
+  color: var(--yellow);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Email form ---------- */
+.signup {
+  position: relative;
+  z-index: 4;
+
+  width: 40%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  border-radius: 999px;
+
+  /* colour */
+  /* variables */
+  --glass-tint: #ffffff;
+  --glass-opacity: 12%;
+  --glass-border-opacity: 15%;
+  --glass-highlight-opacity: 15%;
+
+  /* material */
+  background: linear-gradient(
+    180deg,
+    color-mix(
+        in srgb,
+        var(--glass-tint) calc(var(--glass-opacity) + 6%),
+        transparent
+      )
+      0%,
+    color-mix(in srgb, var(--glass-tint) var(--glass-opacity), transparent) 100%
+  );
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%); /* Safari support */
+
+  /* shadows */
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--glass-tint) var(--glass-border-opacity),
+      transparent
+    );
+  box-shadow:
+    inset 0 0.5px 0.5px rgba(255, 255, 255, var(--glass-highlight-opacity)),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.email {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  padding-left: 0.5rem;
+  font: 500 1rem var(--font);
+  color: #fff;
+}
+.email::placeholder {
+  color: var(--secondary-text);
+}
+.email:focus-visible {
+  border-radius: 999px;
+  outline: none;
+}
+
+.status {
+  position: relative;
+  z-index: 4;
+  min-height: 1em;
+  margin: 0.8rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.status.error {
+  color: var(--red);
+}
+.status.ok {
+  color: var(--green);
+}
+
+/* gradient rectangle */
+.gradient-rect {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1e1e1ee6, #00000026);
+}
+
+/* FOOTER ITEMS --------------------------------*/
+.socials {
+  display: flex;
+  gap: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+.socials svg {
+  opacity: 0.7;
+}
+.socials svg:hover {
+  opacity: 1;
+}
+
+/* GLASS STYLING ------------------------------------------*/
+
+.glass-btn {
+  /* variables */
+  --glass-tint: #ffffff;
+  --glass-opacity: 12%;
+  --glass-border-opacity: 15%;
+  --glass-highlight-opacity: 25%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  user-select: none;
+
+  /* material */
+  background: linear-gradient(
+    180deg,
+    color-mix(
+        in srgb,
+        var(--glass-tint) calc(var(--glass-opacity) + 6%),
+        transparent
+      )
+      0%,
+    color-mix(in srgb, var(--glass-tint) var(--glass-opacity), transparent) 100%
+  );
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%); /* Safari support */
+
+  /* shadows */
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--glass-tint) var(--glass-border-opacity),
+      transparent
+    );
+  box-shadow:
+    inset 0 0.5px 0.5px rgba(255, 255, 255, var(--glass-highlight-opacity)),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* physics */
+  transition:
+    transform 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.glass-btn:hover {
+  --glass-opacity: 14%;
+  --glass-border-opacity: 28%;
+  /* box-shadow: 
+    inset 0 1px 0.5px rgba(255, 255, 255, calc(var(--glass-highlight-opacity) + 1%)),
+    0 6px 20px rgba(0, 0, 0, 0.12); */
+}
+
+/* pressed state */
+.glass-btn:active {
+  transform: scale(0.97);
+  --glass-opacity: 0.1;
+}
+
+.glass-btn--blue {
+  --glass-tint: var(--blue);
+  --glass-opacity: 16%;
+  --glass-border-opacity: 25%;
+}
+/* get token btn */
+.glass-btn--pink {
+  --glass-tint: var(--pink);
+  --glass-opacity: 70%;
+  --glass-border-opacity: 25%;
+  font: 500 1rem var(--font);
+}
+
+.glass-btn[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* Info dialog ------------------------------------------------------------ */
+dialog {
+  /* reset */
+  margin: 0;
+  inset: auto;
+
+  /* position */
+  position-anchor: --dialogue-btn;
+  position-area: inline-start;
+  margin-right: 1%;
+  margin-top: 2%;
+  padding: 1%;
+
+  border: 0;
+  border-radius: 22px;
+  color: var(--text);
+  padding: 0.5rem;
+  max-width: min(25vw, 30vw);
+  height: fit-content;
+  font-family: var(--font);
+
+  /* background */
+  /* variables */
+  --glass-tint: #ffffff;
+  --glass-opacity: 12%;
+  --glass-border-opacity: 15%;
+  --glass-highlight-opacity: 25%;
+
+  /* material */
+  background: linear-gradient(
+    180deg,
+    color-mix(
+        in srgb,
+        var(--glass-tint) calc(var(--glass-opacity) + 6%),
+        transparent
+      )
+      0%,
+    color-mix(in srgb, var(--glass-tint) var(--glass-opacity), transparent) 100%
+  );
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%); /* Safari support */
+
+  /* shadows */
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--glass-tint) var(--glass-border-opacity),
+      transparent
+    );
+  box-shadow:
+    inset 0 0.5px 0.5px rgba(255, 255, 255, var(--glass-highlight-opacity)),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* MOBILE ------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .page {
+    padding-inline: 1.1rem;
+  }
+  .app-icon,
+  .info-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+  .info-btn {
+    border-radius: 999px;
+  }
+  .get-token-btn {
+    padding: 0.8rem 1rem;
+  }
+  footer {
+    font-size: 0.65rem;
+  }
+  .shape.triangle {
+    left: 4%;
+  }
+  .shape.diamond {
+    left: auto;
+    right: 2%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shape {
+    animation: none;
+  }
+  * {
+    transition: none !important;
+  }
+}

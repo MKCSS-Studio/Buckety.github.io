@@ -1,1 +1,717 @@
-Hello world!
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Buckety Landing Page</title>
+
+    <!-- Montserrat font, only loads for non-Apple devices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- style sheet -->
+    <link rel="stylesheet" href="/css/stylesheet.css" />
+    <link rel="stylesheet" href="/css/bucket.css" />
+
+    <!-- js script -->
+    <script src="/script.js" defer></script>
+  </head>
+
+  <!-- BODY ------------------------------------------------------------------>
+  <body>
+    <!-- HEADER ------------------------------------------------------------------>
+    <header>
+      <img src="/img/bucketyIcon.png" class="app-icon" alt="Buckety Icon" />
+
+      <button
+        class="glass-btn glass-btn--blue"
+        id="infoBtn"
+        aria-label="About Buckety"
+      >
+        <svg
+          width="7"
+          height="13"
+          viewBox="0 0 7 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.29541 2.51904C2.59717 2.51904 2.03857 1.96045 2.03857 1.26221C2.03857 0.557617 2.59717 -0.000976562 3.29541 -0.000976562C3.99365 -0.000976562 4.55225 0.557617 4.55225 1.26221C4.55225 1.96045 3.99365 2.51904 3.29541 2.51904ZM0.000976562 12.0405C0.000976562 11.5771 0.394531 11.2153 0.902344 11.2153H2.70508V6.17529H1.12451C0.623047 6.17529 0.229492 5.81348 0.216797 5.35645C0.216797 4.89307 0.616699 4.53125 1.12451 4.53125H3.61279C4.09521 4.53125 4.46973 4.90576 4.46973 5.37549V11.2153H5.88525C6.39307 11.2153 6.78662 11.5771 6.78027 12.0405C6.78027 12.4976 6.38037 12.8594 5.88525 12.8594H0.902344C0.407227 12.8594 0.00732422 12.4976 0.000976562 12.0405Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <!-- HERO TEXT ------------------------------------------------------------------>
+    <main class="hero">
+      <p class="stage-text">· Pre-Seed Stage</p>
+      <h1>
+        <em>Buckety</em> is now on
+        <a
+          href="https://testflight.apple.com/join/uED8Nket"
+          target="_blank"
+          rel="noopener"
+          >TestFlight</a
+        >
+        for MacOS beta testing!
+      </h1>
+
+      <form class="signup" id="signup" novalidate>
+        <input
+          class="email"
+          id="email"
+          name="email"
+          type="email"
+          placeholder="mkcss.studio@gmail.com"
+          autocomplete="email"
+          required
+        />
+        <button class="glass-btn glass-btn--pink" type="submit">
+          Get Token
+        </button>
+      </form>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <!-- BUCKET ------------------------------------------------------------------>
+    <div class="bucket" aria-hidden="true">
+      <!-- Layer 1: TOP OPENING Static. -->
+      <svg
+        class="bucket-item"
+        viewBox="0 0 718 482"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <path
+            id="hole-shape"
+            d="M659.056 149.599V154.039C658.516 154.388 658.693 156.458 658.179 159.445C657.444 159.826 657.559 160.939 657.223 161.799C652.388 174.226 641.31 183.496 631.039 190.078C589.943 216.442 522.425 228.934 475.229 234.657C400.555 243.707 317.975 243.123 243.381 233.18C200.329 227.441 150.405 217.36 110.284 199.218C96.7803 193.114 79.7258 183.52 69.5515 172.059C65.7085 167.741 62.4588 163.146 60.3868 157.432C60.4753 156.945 60.1034 156.693 59.7846 157.002C59.3596 154.323 59.0143 151.401 58.2793 150.086V145.151C58.5804 144.964 58.846 144.575 58.9257 143.974C61.5113 124.185 84.7199 109.444 99.9326 101.709C136.857 82.9425 185.975 72.6583 226.3 66.9033C304.896 55.6857 393.994 55.6857 472.678 66.0105C514.181 71.457 561.413 80.8483 600.525 97.1553C613.232 102.456 625.212 108.625 636.591 116.928C645.694 123.568 656.594 134.38 658.613 146.661C658.781 147.683 658.312 148.925 659.056 149.591V149.599Z"
+          />
+          <filter
+            id="filter0_in_34_8"
+            x="58.2793"
+            y="58.375"
+            width="600.775"
+            height="189.763"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="7.07589" />
+            <feGaussianBlur stdDeviation="6.19141" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="shape"
+              result="effect1_innerShadow_34_8"
+            />
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="1.1305993795394897 1.1305993795394897"
+              stitchTiles="stitch"
+              numOctaves="3"
+              result="noise"
+              seed="4047"
+            />
+            <feColorMatrix
+              in="noise"
+              type="luminanceToAlpha"
+              result="alphaNoise"
+            />
+            <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+              <feFuncA
+                type="discrete"
+                tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+              />
+            </feComponentTransfer>
+            <feComposite
+              operator="in"
+              in2="effect1_innerShadow_34_8"
+              in="coloredNoise1"
+              result="noise1Clipped"
+            />
+            <feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+            <feComposite
+              operator="in"
+              in2="noise1Clipped"
+              in="color1Flood"
+              result="color1"
+            />
+            <feMerge result="effect2_noise_34_8">
+              <feMergeNode in="effect1_innerShadow_34_8" />
+              <feMergeNode in="color1" />
+            </feMerge>
+          </filter>
+          <filter
+            id="filter1_df_34_8"
+            x="0"
+            y="0"
+            width="717.528"
+            height="299.44"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="7.07589" />
+            <feGaussianBlur stdDeviation="3.53795" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_34_8"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_34_8"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="29.1881"
+              result="effect2_foregroundBlur_34_8"
+            />
+          </filter>
+          <linearGradient
+            id="paint0_linear_34_8"
+            x1="423.922"
+            y1="58.375"
+            x2="433.558"
+            y2="396.348"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0.100962" stop-color="white" />
+            <stop offset="1" stop-color="#B0B0B0" />
+          </linearGradient>
+          <radialGradient
+            id="paint1_radial_34_8"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientTransform="matrix(-0.664617 240.762 -583.435 -1.6125 341.494 101.269)"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0.177885" stop-color="white" />
+            <stop offset="0.884649" stop-color="#454545" />
+          </radialGradient>
+        </defs>
+        <g filter="url(#filter0_in_34_8)">
+          <use href="#hole-shape" fill="url(#paint0_linear_34_8)" />
+        </g>
+        <g opacity="0.7" filter="url(#filter1_df_34_8)">
+          <use href="#hole-shape" fill="url(#paint1_radial_34_8)" />
+        </g>
+      </svg>
+
+      <!-- SHAPES -->
+      <!-- circle -->
+      <svg
+        class="shape circle bucket-item"
+        width="200"
+        height="200"
+        viewBox="0 0 219 219"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_i_1578_7207)">
+          <path
+            d="M212.562 75.0594C231.31 132.251 200.145 193.812 142.954 212.561C85.7623 231.309 24.2009 200.144 5.45264 142.953C-13.2957 85.7614 17.8688 24.1999 75.0603 5.45166C132.252 -13.2966 193.813 17.8678 212.562 75.0594Z"
+            fill="#007CFF"
+            fill-opacity="0.4"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_i_1578_7207"
+            x="0"
+            y="0"
+            width="218.014"
+            height="222.016"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="12.5" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="shape"
+              result="effect1_innerShadow_1578_7207"
+            />
+          </filter>
+        </defs>
+      </svg>
+
+      <!-- diamond -->
+      <svg
+        class="shape diamond bucket-item"
+        width="200"
+        height="200"
+        viewBox="0 0 204 204"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="100.01"
+          y="-13.3906"
+          width="162.567"
+          height="162.567"
+          rx="32.3455"
+          transform="rotate(44.2328 100.01 -13.3906)"
+          fill="#FFC300"
+          fill-opacity="0.4"
+        />
+      </svg>
+
+      <!-- triangle -->
+      <svg
+        class="shape triangle bucket-item"
+        width="170"
+        height="185"
+        viewBox="0 0 170 185"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.905 19.6533C9.90304 3.57922 27.9275 -5.38669 41.349 3.51468L160.542 82.5655C173.964 91.4668 172.716 111.559 158.297 118.732L30.2401 182.431C15.8205 189.604 -0.956448 178.477 0.0415951 162.403L8.905 19.6533Z"
+          fill="#FF3AA1"
+          fill-opacity="0.4"
+        />
+      </svg>
+
+      <!-- Layer 2: BODY & HANDLE as ONE static layer -->
+      <svg
+        class="bucket-item bucket-body"
+        viewBox="0 0 718 482"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <path
+            id="body-shape"
+            d="M658.078 154.19C653.224 166.618 642.103 175.888 631.79 182.471C590.533 208.837 522.747 221.33 475.365 227.052C400.396 236.103 317.49 235.519 242.602 225.575C199.379 219.836 149.258 209.754 108.978 191.612C95.4211 185.507 78.2992 175.913 68.0848 164.451C64.2266 160.132 60.964 155.538 58.8838 149.823C58.9727 149.336 58.5993 149.085 58.2793 149.393L137.692 642.421C150.005 683.503 194.81 750.837 356.196 751.852C515.298 750.853 561.098 685.395 574.166 644.174L659.056 151.836C658.318 152.218 658.433 153.33 658.095 154.19H658.078Z"
+          />
+          <filter
+            id="filter2_n_34_8"
+            x="58.2793"
+            y="149.258"
+            width="600.775"
+            height="602.594"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.14132492244243622 0.14132492244243622"
+              stitchTiles="stitch"
+              numOctaves="3"
+              result="noise"
+              seed="5867"
+            />
+            <feColorMatrix
+              in="noise"
+              type="luminanceToAlpha"
+              result="alphaNoise"
+            />
+            <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+              <feFuncA
+                type="discrete"
+                tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+              />
+            </feComponentTransfer>
+            <feComposite
+              operator="in"
+              in2="shape"
+              in="coloredNoise1"
+              result="noise1Clipped"
+            />
+            <feFlood
+              flood-color="rgba(243, 243, 243, 0.25)"
+              result="color1Flood"
+            />
+            <feComposite
+              operator="in"
+              in2="noise1Clipped"
+              in="color1Flood"
+              result="color1"
+            />
+            <feMerge result="effect1_noise_34_8">
+              <feMergeNode in="shape" />
+              <feMergeNode in="color1" />
+            </feMerge>
+          </filter>
+          <filter
+            id="filter3_f_34_8"
+            x="0"
+            y="90.6004"
+            width="717.528"
+            height="719.346"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="29.1881"
+              result="effect1_foregroundBlur_34_8"
+            />
+          </filter>
+          <filter
+            id="filter4_d_34_8"
+            x="18.4434"
+            y="210.859"
+            width="680.27"
+            height="401.133"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="20" />
+            <feGaussianBlur stdDeviation="8.5" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_34_8"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_34_8"
+              result="shape"
+            />
+          </filter>
+          <linearGradient
+            id="paint2_linear_34_8"
+            x1="81.0114"
+            y1="149.258"
+            x2="659.056"
+            y2="149.258"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="white" />
+            <stop offset="0.548077" stop-color="white" />
+            <stop offset="1" stop-color="white" />
+          </linearGradient>
+          <linearGradient
+            id="paint3_linear_34_8"
+            x1="84.5915"
+            y1="280.659"
+            x2="792.692"
+            y2="368.251"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#454545" />
+            <stop offset="0.226382" stop-color="white" />
+            <stop offset="0.947115" stop-color="white" />
+          </linearGradient>
+          <linearGradient
+            id="paint4_linear_34_8"
+            x1="513.152"
+            y1="93.0584"
+            x2="527.985"
+            y2="1082.07"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0.128054" stop-color="#7E7E7E" />
+            <stop offset="0.268531" stop-color="#515151" />
+            <stop offset="0.511745" stop-color="#7D7D7D" />
+            <stop offset="0.759152" stop-color="#1C1C1C" />
+            <stop offset="1" stop-color="#4C4C4C" />
+          </linearGradient>
+        </defs>
+        <g filter="url(#filter2_n_34_8)">
+          <use href="#body-shape" fill="url(#paint2_linear_34_8)" />
+        </g>
+        <g opacity="0.4" filter="url(#filter3_f_34_8)">
+          <use href="#body-shape" fill="url(#paint3_linear_34_8)" />
+        </g>
+        <g filter="url(#filter4_d_34_8)">
+          <path
+            d="M626.443 236.895C628.149 221.757 641.866 210.117 657.079 210.896C672.293 211.676 683.243 224.58 681.537 239.718L679.956 253.744C679.249 260.02 676.475 265.693 672.388 270.131C668.006 322.94 650.83 390.702 611.137 449.104C563.411 519.323 483.668 574.996 358.705 574.996C233.738 574.996 154.08 519.319 106.445 449.088C67.0109 390.947 49.8963 323.535 45.4434 270.844C40.9864 266.309 37.945 260.361 37.1992 253.744L35.6191 239.718C33.913 224.58 44.8625 211.676 60.0762 210.896C75.2899 210.117 89.0058 221.757 90.7119 236.895L92.293 250.921C93.1924 258.901 90.5728 266.259 85.667 271.549C90.1745 318.1 105.679 376.696 139.55 426.635C180.19 486.554 247.781 534.996 358.705 534.996C469.633 534.996 537.321 486.55 578.055 426.619C611.855 376.888 627.44 318.577 632.045 272.134C626.781 266.809 623.929 259.199 624.862 250.921L626.443 236.895Z"
+            fill="url(#paint4_linear_34_8)"
+          />
+        </g>
+      </svg>
+
+      <!-- Layer 3: EYES -->
+      <svg
+        class="eyes bucket-item"
+        viewBox="0 0 718 482"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <filter
+            id="filter5_di_34_8"
+            x="210.852"
+            y="268.672"
+            width="168.9"
+            height="222.211"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="22.5" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_34_8"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_34_8"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="8.84487" />
+            <feGaussianBlur stdDeviation="22.5" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.535363 0 0 0 0 0.535363 0 0 0 0 0.535363 0 0 0 1 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="shape"
+              result="effect2_innerShadow_34_8"
+            />
+          </filter>
+          <filter
+            id="filter6_di_34_8"
+            x="337.168"
+            y="268.828"
+            width="168.955"
+            height="221.945"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="22.5" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_34_8"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_34_8"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="8.84487" />
+            <feGaussianBlur stdDeviation="22.5" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.535363 0 0 0 0 0.535363 0 0 0 0 0.535363 0 0 0 1 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="shape"
+              result="effect2_innerShadow_34_8"
+            />
+          </filter>
+        </defs>
+        <g class="eye eye--left" filter="url(#filter5_di_34_8)">
+          <rect
+            x="263.084"
+            y="307.062"
+            width="73.6201"
+            height="145.422"
+            rx="36.8101"
+            fill="#1C1C1C"
+          />
+        </g>
+        <g class="eye eye--right" filter="url(#filter6_di_34_8)">
+          <rect
+            x="380.219"
+            y="307.229"
+            width="73.67"
+            height="145.13"
+            rx="36.835"
+            fill="#1C1C1C"
+          />
+        </g>
+      </svg>
+    </div>
+    <!-- gradient rectangle to dim buckety shape -->
+    <div class="gradient-rect"></div>
+
+    <!-- FOOTER ----------------------------------------------------------------------------------------->
+    <footer>
+      <div class="socials">
+        <!-- instagram -->
+        <a
+          href="https://www.instagram.com/buckety.app/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 7H17.01M8 12C8 17.3333 16 17.3333 16 12C16 6.66667 8 6.66667 8 12ZM3 8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="white"
+              stroke-opacity="0.75"
+            />
+          </svg>
+        </a>
+
+        <!-- tiktok -->
+        <a
+          href="https://tiktok.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="TikTok"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 3C16 5.76142 18.2386 8 21 8V12C19.1945 11.7538 17.4773 11.0669 16 10V14.5C16 18.0898 13.0898 21 9.5 21C5.91015 21 3 18.0898 3 14.5C3 11.4879 5.06923 8.87004 8 8.175V12.5C6.07798 13.9415 7.09747 17 9.5 17C10.8807 17 12 15.8807 12 14.5V3H16Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="white"
+              stroke-opacity="0.75"
+            />
+          </svg>
+        </a>
+      </div>
+      <p>Discover. Bucket. Dig Deeper.</p>
+      <p>Built by Apple Developer Academy Learners.</p>
+      <p>© 2026 MKCSS STUDIO</p>
+    </footer>
+
+    <!-- DIALOG  -->
+    <dialog id="infoDialog">
+      <!-- <p class="lead">Buckety is currently in <strong>Pre-Seed</strong> production.</p> -->
+      <h2>Buckety is currently in <b>Pre-Seed</b> production.</h2>
+      <p>
+        If this sounds interesting to you, feel free to
+        <a href="mailto:mkcss.studio@gmail.com">reach out</a>!
+      </p>
+    </dialog>
+  </body>
+</html>
