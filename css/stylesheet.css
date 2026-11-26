@@ -396,9 +396,9 @@ dialog {
     height: 52px;
     border-radius: 14px;
   }
-  .info-btn {
+  /* .info-btn {
     border-radius: 999px;
-  }
+  } */
   .get-token-btn {
     padding: 0.8rem 1rem;
   }
