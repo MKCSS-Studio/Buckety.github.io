@@ -148,9 +148,10 @@ a {
 }
 
 .stage-text {
-  color: var(--yellow);
+  color: var(--secondary-text);
   font-size: 0.85rem;
   font-weight: 600;
+  opacity: 0.5;
 }
 
 /* Email form ---------- */
