@@ -70,13 +70,19 @@
         action="https://buckety-inference.onrender.com/waitlist"
         method="post"
       >
-        <input type="text" name="honeypot" autocomplete="off" tabindex="-1" hidden />
+        <input
+          type="text"
+          name="honeypot"
+          autocomplete="off"
+          tabindex="-1"
+          hidden
+        />
         <input
           class="email"
           id="email"
           name="email"
           type="email"
-          placeholder="Your email address"
+          placeholder="youremail@gmail.com"
           autocomplete="email"
           aria-label="Email address"
           maxlength="254"
@@ -89,14 +95,20 @@
       <p class="status" id="status" role="status" aria-live="polite"></p>
     </main>
 
-    <dialog id="signupDialog" aria-labelledby="signupTitle" aria-describedby="signupDescription">
+    <dialog
+      id="signupDialog"
+      aria-labelledby="signupTitle"
+      aria-describedby="signupDescription"
+    >
       <h2 id="signupTitle">You’re on the waitlist</h2>
       <p id="signupDescription">
         Check your inbox and Spam folder for your Buckety AI invite from
         mkcss.studio@gmail.com.
       </p>
       <form method="dialog">
-        <button class="glass-btn glass-btn--blue" type="submit" autofocus>Done</button>
+        <button class="glass-btn glass-btn--blue" type="submit" autofocus>
+          Done
+        </button>
       </form>
     </dialog>
 
