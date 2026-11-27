@@ -422,6 +422,7 @@ a {
 @media (max-width: 640px) {
   .page {
     padding-inline: 1.1rem;
+    height: 100vh;
   }
   .app-icon,
   .info-btn {
@@ -443,10 +444,10 @@ a {
   }
   .shape.diamond {
     left: auto;
-    right: 5%;
+    right: 10%;
   }
   .signup {
-    width: 90%;
+    width: 90vw;
   }
 }
 
