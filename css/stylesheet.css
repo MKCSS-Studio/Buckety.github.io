@@ -443,7 +443,10 @@ a {
   }
   .shape.diamond {
     left: auto;
-    right: 2%;
+    right: 5%;
+  }
+  .signup {
+    width: 90%;
   }
 }
 
